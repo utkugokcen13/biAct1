@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".clubfeedpage">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".studentfeedpage"
+        tools:layout_editor_absoluteX="-71dp"
+        tools:layout_editor_absoluteY="-16dp">
+
+        <ImageView
+            android:id="@+id/topLayout"
+            android:layout_width="411dp"
+            android:layout_height="82dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/layoutana" />
+
+        <ImageView
+            android:id="@+id/botLayout"
+            android:layout_width="411dp"
+            android:layout_height="82dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/layoutana" />
+
+        <ImageView
+            android:id="@+id/homeicon"
+            android:layout_width="47dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/topLayout"
+            app:layout_constraintTop_toTopOf="@+id/botLayout"
+            app:srcCompat="@drawable/homebutton" />
+
+        <TextView
+            android:id="@+id/homePageText"
+            android:layout_width="74dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="52dp"
+            android:text="Home Page"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/botLayout" />
+
+        <ImageView
+            android:id="@+id/circle"
+            android:layout_width="153dp"
+            android:layout_height="101dp"
+            android:layout_marginStart="136dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/botLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/profileicon"
+            android:layout_width="47dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="44dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/botLayout"
+            app:srcCompat="@drawable/profile" />
+
+        <TextView
+            android:id="@+id/profileText"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="48dp"
+            android:text="Profile"
+            android:textColor="#FDFDFE"
+            app:layout_constraintEnd_toEndOf="@+id/botLayout"
+            app:layout_constraintTop_toTopOf="@+id/botLayout" />
+
+        <ImageView
+            android:id="@+id/searchicon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="72dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/search" />
+
+        <ImageView
+            android:id="@+id/settingsicon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/settings" />
+
+        <TextView
+            android:id="@+id/myupcomingevents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="58dp"
+            android:text="Create An Event"
+            android:textColor="#F9F9F9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/botLayout" />
+
+        <TextView
+            android:id="@+id/clubname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="24dp"
+            android:text="TextView"
+            android:textColor="#F9F9F9"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/addicon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="182dp"
+            android:layout_marginTop="18dp"
+            android:onClick="addClicked"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/circle"
+            app:srcCompat="@drawable/addicon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/manicon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:onClick="manClicked"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/man" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="411dp"
+        android:layout_height="438dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

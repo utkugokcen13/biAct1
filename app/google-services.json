@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "138403774936",
+    "firebase_url": "https://biact-74f9d.firebaseio.com",
+    "project_id": "biact-74f9d",
+    "storage_bucket": "biact-74f9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138403774936:android:720ee7d3d527d477ad72ad",
+        "android_client_info": {
+          "package_name": "com.utkugokcen.biact"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138403774936-04kvdqbkfrn9d29j21b7gh6t50e0fl6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4EjGU6jXwl_5rbZaBFY-KskrvsxbcPIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "138403774936-04kvdqbkfrn9d29j21b7gh6t50e0fl6u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".createeventpage">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".studentprofilepage"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="357dp">
+
+        <ImageView
+            android:id="@+id/pointBox2"
+            android:layout_width="268dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="352dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/kare" />
+
+        <EditText
+            android:id="@+id/nameText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="224dp"
+            android:ems="10"
+            android:hint="Event Name"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/nameBox"
+            android:layout_width="268dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="220dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/kare" />
+
+        <ImageView
+            android:id="@+id/locBox"
+            android:layout_width="268dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="308dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/kare" />
+
+        <ImageView
+            android:id="@+id/pointBox"
+            android:layout_width="268dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="396dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/kare" />
+
+        <ImageView
+            android:id="@+id/topLayout2"
+            android:layout_width="411dp"
+            android:layout_height="82dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/layoutana" />
+
+        <TextView
+            android:id="@+id/clubname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            android:textColor="#F9F9F9"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/backbutton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:onClick="backClicked"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topLayout2"
+            app:srcCompat="@drawable/backbutton" />
+
+        <ImageView
+            android:id="@+id/addphoto"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="92dp"
+            android:onClick="addphotoClicked"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topLayout2"
+            app:srcCompat="@drawable/addphoto" />
+
+        <Button
+            android:id="@+id/createclubbutton"
+            android:layout_width="324dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="476dp"
+            android:backgroundTint="#CE3333"
+            android:onClick="createeventClicked"
+            android:text="Create an event"
+            android:textColor="#FDFDFE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topLayout2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/dateBox"
+        android:layout_width="268dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="264dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kare" />
+
+    <EditText
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="224dp"
+        android:ems="10"
+        android:hint="Event Name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="268dp"
+        android:ems="10"
+        android:hint="Event Date"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="312dp"
+        android:ems="10"
+        android:hint="Event Time"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/locationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="356dp"
+        android:ems="10"
+        android:hint="Event Location"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pointText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="400dp"
+        android:ems="10"
+        android:hint="GE250/1 Point"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/descriptionBox"
+        android:layout_width="268dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="436dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bigbox" />
+
+    <EditText
+        android:id="@+id/descriptionText"
+        android:layout_width="250dp"
+        android:layout_height="89dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="464dp"
+        android:ems="10"
+        android:hint="Event Description"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
