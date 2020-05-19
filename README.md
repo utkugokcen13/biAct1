@@ -15,8 +15,8 @@ _In Bilkent University, there are a few places that we can see the announcements
 + **Group/project Selection:** completed (date)
 + **Requirements:** completed (9/3/2020)
 + **UI Design:** completed (1/4/2020)
-+ **Detailed Design:** in progress
-+ **Implementation:** not started!
++ **Detailed Design:** completed (5/5/2020)
++ **Implementation:** It's almost done
 + **Reflections:** not yet!
 
 [Group Meetings Log](group/meetingslog.md)
