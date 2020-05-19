@@ -21,7 +21,6 @@ _In Bilkent University, there are a few places that we can see the announcements
 
 [Group Meetings Log](group/meetingslog.md)
 #### Group Members
-- [Turgut Alp Edis](group/member1_log.md)
 - [Arda Akdeniz](group/member2_log.md)
 - [Utku Gökçen](group/member3_log.md)
 - [Mikail Koç](group/member4_log.md)
