@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/r_clubName"
@@ -13,7 +15,8 @@
         android:paddingBottom="5dp"
         android:text="clubname"
         android:textColor="#000001"
-        android:textSize="20sp" />
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
 
     <ImageView
@@ -32,7 +35,8 @@
         android:paddingBottom="5dp"
         android:text="eventname"
         android:textColor="#000001"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/r_eventDate"
@@ -43,7 +47,8 @@
         android:paddingBottom="5dp"
         android:text="eventdate"
         android:textColor="#000001"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/r_eventTime"
@@ -54,7 +59,8 @@
         android:paddingBottom="5dp"
         android:text="eventtime"
         android:textColor="#000001"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/r_eventLocation"
@@ -65,7 +71,8 @@
         android:paddingBottom="5dp"
         android:text="eventlocation"
         android:textColor="#000001"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/r_eventPoint"
@@ -76,7 +83,8 @@
         android:paddingBottom="5dp"
         android:text="eventpoint"
         android:textColor="#000001"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/r_eventDescription"
@@ -87,5 +95,16 @@
         android:paddingBottom="5dp"
         android:text="eventdescription"
         android:textColor="#000001"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/attendButton"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:backgroundTint="#B62921"
+        android:onClick="attendClicked"
+        android:text="ATTEND"
+        android:textColor="#FDFDFE" />
+
 </LinearLayout>

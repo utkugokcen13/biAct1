@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".clubprofilepage">
+
+
+        <ImageView
+            android:id="@+id/topLayout2"
+            android:layout_width="411dp"
+            android:layout_height="82dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/layoutana" />
+
+        <TextView
+            android:id="@+id/clubnameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            android:textColor="#F9F9F9"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/backbutton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:onClick="backClicked"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topLayout2"
+            app:srcCompat="@drawable/backbutton" />
+
+        <ImageView
+            android:id="@+id/cerceve"
+            android:layout_width="350dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="292dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/cerceve" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="244dp"
+        android:text="TextView"
+        android:textColor="#000001"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout2" />
+
+
+        <ImageView
+            android:id="@+id/addphoto"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="144dp"
+            android:layout_marginTop="120dp"
+            android:onClick="addphotoClicked"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topLayout2"
+            app:srcCompat="@drawable/addphoto" />
+
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="296dp"
+        android:text="TextView"
+        android:textColor="#000001"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

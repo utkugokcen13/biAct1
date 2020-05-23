@@ -41,7 +41,7 @@ public class createeventpage extends AppCompatActivity {
     ImageView addphoto;
     Uri imageData;
     TextView nameText, dateText, timeText, locationText, pointText, descriptionText, clubnameText;
-    String clubname, name, surname, department, email;
+    String clubname, name, surname, department, email,clubdescription,namesurnameText, password;
     private StorageReference storageReference;
     private FirebaseStorage firebaseStorage;
     private FirebaseFirestore firebaseFireStore;
@@ -58,6 +58,9 @@ public class createeventpage extends AppCompatActivity {
         surname = intent.getStringExtra("surname");
         department = intent.getStringExtra("dep");
         email = intent.getStringExtra("mail");
+        clubdescription = intent.getStringExtra("clubdes");
+        namesurnameText = intent.getStringExtra("namesurname");
+        password = intent.getStringExtra("password");
 
         addphoto = findViewById(R.id.addphoto);
         nameText = findViewById(R.id.nameText);
@@ -79,7 +82,7 @@ public class createeventpage extends AppCompatActivity {
     }
 
     public void createeventClicked(View view){
-        if (imageData != null) {
+
 
             UUID uuid = UUID.randomUUID();
             final String imageName = "feedphotos/" + uuid + ".jpg";
@@ -98,8 +101,10 @@ public class createeventpage extends AppCompatActivity {
                             String eventLocation = locationText.getText().toString();
                             String eventPoint = pointText.getText().toString();
                             String eventDescription = descriptionText.getText().toString();
+                            String eventOwner = clubnameText.getText().toString();
 
                             HashMap<String, Object> postData = new HashMap<>();
+                            postData.put("eventowner", eventOwner);
                             postData.put("eventname", eventName);
                             postData.put("eventdate", eventDate);
                             postData.put("eventtime", eventTime);
@@ -109,7 +114,7 @@ public class createeventpage extends AppCompatActivity {
                             postData.put("postdate", FieldValue.serverTimestamp());
                             postData.put("downloadurl", downloadUrl);
 
-                            firebaseFireStore.collection("Events").add(postData).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            firebaseFireStore.collection("clubPageEvents").add(postData).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
                                 public void onSuccess(DocumentReference documentReference) {
                                     Intent intent = new Intent(createeventpage.this, clubfeedpage.class);
@@ -119,6 +124,9 @@ public class createeventpage extends AppCompatActivity {
                                     intent.putExtra("dep", department);
                                     intent.putExtra("mail", email);
                                     intent.putExtra("clubname", clubname);
+                                    intent.putExtra("clubdes", clubdescription);
+                                    intent.putExtra("namesurname", namesurnameText);
+                                    intent.putExtra("password", password);
                                     startActivity(intent);
 
 
@@ -129,6 +137,9 @@ public class createeventpage extends AppCompatActivity {
                                     Toast.makeText(createeventpage.this, e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
                                 }
                             });
+
+                            firebaseFireStore.collection("studentPageEvents").add(postData);
+
 
 
                         }
@@ -141,7 +152,7 @@ public class createeventpage extends AppCompatActivity {
                     Toast.makeText(createeventpage.this, e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
                 }
             });
-        }
+
     }
 
     public void addphotoClicked(View view){
@@ -197,6 +208,9 @@ public class createeventpage extends AppCompatActivity {
         intent.putExtra("dep", department);
         intent.putExtra("mail", email);
         intent.putExtra("clubname", clubname);
+        intent.putExtra("clubdes", clubdescription);
+        intent.putExtra("namesurname", namesurnameText);
+        intent.putExtra("password", password);
         startActivity(intent);
     }
 

@@ -30,27 +30,24 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 import java.util.UUID;
 
-public class studentprofilepage extends AppCompatActivity {
-    TextView nameText, emailText, depText, namesurname;
-    String name, surname, department, email, clubname,clubdescription,namesurnameText, password;
+public class clubprofilepage extends AppCompatActivity {
+    TextView nameText, descriptionText, clubnameText;
+    String name, surname, department, email, clubname, clubdescription, namesurnameText,password;
     Bitmap selectedImage;
     ImageView addphoto;
     private FirebaseStorage firebaseStorage;
     private StorageReference storageReference;
     Uri imageData;
     private FirebaseFirestore firebaseFirestore;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.studentprofilepagelayout);
+        setContentView(R.layout.clubprofilepagelayout);
+
 
         nameText = findViewById(R.id.nameText);
-        emailText = findViewById(R.id.emailText);
-        depText = findViewById(R.id.depText);
-        namesurname = findViewById(R.id.clubname);
-
-        addphoto = findViewById(R.id.addphoto);
+        descriptionText = findViewById(R.id.descriptionText);
+        clubnameText = findViewById(R.id.clubnameText);
 
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
@@ -62,19 +59,19 @@ public class studentprofilepage extends AppCompatActivity {
         namesurnameText = intent.getStringExtra("namesurname");
         password = intent.getStringExtra("password");
 
-        nameText.setText("Name: " + name + " " + surname);
-        depText.setText("Department: " + department);
-        emailText.setText("E-mail: " + email );
-        namesurname.setText(name + " " + surname + " " + department);
+        clubnameText.setText(clubname);
+        descriptionText.setText("Club Description: " + clubdescription);
+        nameText.setText("Club Name: " + clubname);
 
         firebaseStorage = FirebaseStorage.getInstance();
         storageReference = firebaseStorage.getReference();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
+
     }
 
     public void backClicked(View view){
-        Intent intent = new Intent(studentprofilepage.this, studentfeedpage.class);
+        Intent intent = new Intent(clubprofilepage.this, clubfeedpage.class);
         intent.putExtra("name", name);
         intent.putExtra("surname", surname);
         intent.putExtra("dep", department);
@@ -86,25 +83,7 @@ public class studentprofilepage extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void createclubClicked(View view){
-        if(clubname == null) {
-            Intent intent = new Intent(studentprofilepage.this, createclubpage.class);
-            intent.putExtra("name", name);
-            intent.putExtra("surname", surname);
-            intent.putExtra("dep", department);
-            intent.putExtra("mail", email);
-            intent.putExtra("clubname", clubname);
-            intent.putExtra("clubdes", clubdescription);
-            intent.putExtra("namesurname", namesurnameText);
-            intent.putExtra("password", password);
-            startActivity(intent);
-        }else{
-            Toast.makeText(studentprofilepage.this, "You already have a club.", Toast.LENGTH_LONG).show();
-        }
-    }
-
     public void addphotoClicked(View view){
-
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},1 );
         }else{
@@ -112,6 +91,7 @@ public class studentprofilepage extends AppCompatActivity {
             startActivityForResult(intentToGallery,2);
         }
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -161,7 +141,7 @@ public class studentprofilepage extends AppCompatActivity {
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(studentprofilepage.this, e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(clubprofilepage.this, e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
                             }
                         });
                     }
@@ -173,4 +153,5 @@ public class studentprofilepage extends AppCompatActivity {
 
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 }

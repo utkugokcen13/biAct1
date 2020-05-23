@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.CollectionReference;
@@ -23,11 +22,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Map;
 
+public class myupcomingeventspage extends AppCompatActivity {
 
-public class clubfeedpage extends AppCompatActivity {
-    TextView clubnameText;
-    ImageView manicon;
-    String clubname, name, surname, department, email,clubdescription,namesurnameText, password;
+    TextView namesurname;
+    String clubname, name, surname, department, email,clubdescription;
     private FirebaseFirestore firebaseFireStore;
     ArrayList<String> eventNameFromFB;
     ArrayList<String> eventDateFromFB;
@@ -42,21 +40,17 @@ public class clubfeedpage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.clubfeedpagelayout);
-
-        clubnameText = findViewById(R.id.clubname);
-        manicon = findViewById(R.id.manicon);
+        setContentView(R.layout.myupcomingeventspagelayout);
 
         Intent intent = getIntent();
-        clubname = intent.getStringExtra("clubname");
         name = intent.getStringExtra("name");
         surname = intent.getStringExtra("surname");
         department = intent.getStringExtra("dep");
         email = intent.getStringExtra("mail");
+        clubname = intent.getStringExtra("clubname");
         clubdescription = intent.getStringExtra("clubdes");
-        namesurnameText = intent.getStringExtra("namesurname");
-        password = intent.getStringExtra("password");
-        clubnameText.setText(clubname);
+
+        namesurname.setText(name + " " + surname);
 
         eventOwnerFromFB = new ArrayList<>();
         eventNameFromFB = new ArrayList<>();
@@ -69,6 +63,7 @@ public class clubfeedpage extends AppCompatActivity {
 
         firebaseFireStore = FirebaseFirestore.getInstance();
 
+
         getDataFromFireStore();
 
         //RecyclerView
@@ -80,20 +75,18 @@ public class clubfeedpage extends AppCompatActivity {
         recyclerView.setAdapter(feedRecyclerAdapter);
 
 
-
     }
-
 
     public void getDataFromFireStore(){
 
-        CollectionReference collectionReference = firebaseFireStore.collection("clubPageEvents");
+        CollectionReference collectionReference = firebaseFireStore.collection("upcomingEvents");
 
         collectionReference.orderBy("postdate", Query.Direction.DESCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
 
                 if(e != null){
-                    Toast.makeText(clubfeedpage.this, e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(myupcomingeventspage.this, e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
                 }
 
                 if(queryDocumentSnapshots != null){
@@ -129,57 +122,5 @@ public class clubfeedpage extends AppCompatActivity {
 
 
 
-    }
-
-    public void manClicked(View view){
-        Intent intent = new Intent(clubfeedpage.this, studentfeedpage.class);
-        intent.putExtra("name", name);
-        intent.putExtra("surname", surname);
-        intent.putExtra("dep", department);
-        intent.putExtra("mail", email);
-        intent.putExtra("clubname", clubname);
-        intent.putExtra("clubdes", clubdescription);
-        intent.putExtra("namesurname", namesurnameText);
-        intent.putExtra("password", password);
-        startActivity(intent);
-    }
-
-    public void addClicked(View view){
-        Intent intent = new Intent(clubfeedpage.this, createeventpage.class);
-        intent.putExtra("name", name);
-        intent.putExtra("surname", surname);
-        intent.putExtra("dep", department);
-        intent.putExtra("mail", email);
-        intent.putExtra("clubname", clubname);
-        intent.putExtra("clubdes", clubdescription);
-        intent.putExtra("namesurname", namesurnameText);
-        intent.putExtra("password", password);
-        startActivity(intent);
-    }
-
-    public void profileClicked(View view){
-        Intent intent = new Intent(clubfeedpage.this, clubprofilepage.class);
-        intent.putExtra("name", name);
-        intent.putExtra("surname", surname);
-        intent.putExtra("dep", department);
-        intent.putExtra("mail", email);
-        intent.putExtra("clubname", clubname);
-        intent.putExtra("clubdes", clubdescription);
-        intent.putExtra("namesurname", namesurnameText);
-        intent.putExtra("password", password);
-        startActivity(intent);
-    }
-
-    public void settingsClicked(View view){
-        Intent intent = new Intent(clubfeedpage.this, settingspage.class);
-        intent.putExtra("name", name);
-        intent.putExtra("surname", surname);
-        intent.putExtra("dep", department);
-        intent.putExtra("mail", email);
-        intent.putExtra("clubname", clubname);
-        intent.putExtra("clubdes", clubdescription);
-        intent.putExtra("namesurname", namesurnameText);
-        intent.putExtra("password", password);
-        startActivity(intent);
     }
 }

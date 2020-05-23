@@ -5,20 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
-public class createclubpage extends AppCompatActivity {
-    String clubname, name, surname, department, email, clubdescription, namesurnameText, password;
-    TextView clubnameText, clubdescriptionText, namesurname;
+import com.google.firebase.auth.FirebaseAuth;
+
+public class settingspage extends AppCompatActivity {
+
+    private FirebaseAuth firebaseAuth;
+    String name, surname, department, email, clubname, clubdescription,namesurnameText,password;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.createclubpagelayout);
-
-        clubnameText = findViewById(R.id.clubnameText);
-        clubdescriptionText = findViewById(R.id.clubdescriptionText);
-        namesurname = findViewById(R.id.namesurnameT);
-
+        setContentView(R.layout.settingspagelayout);
 
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
@@ -30,16 +29,13 @@ public class createclubpage extends AppCompatActivity {
         namesurnameText = intent.getStringExtra("namesurname");
         password = intent.getStringExtra("password");
 
-        namesurname.setText(namesurnameText);
+        firebaseAuth = FirebaseAuth.getInstance();
+    }
 
+    public void signoutClicked(View view){
+        firebaseAuth.signOut();
 
-
-   }
-
-    public void createclub1Clicked(View view){
-        clubname = clubnameText.getText().toString();
-        clubdescription = clubdescriptionText.getText().toString();
-        Intent intent = new Intent(createclubpage.this, clubfeedpage.class);
+        Intent intent = new Intent(settingspage.this,loginpage.class);
         intent.putExtra("name", name);
         intent.putExtra("surname", surname);
         intent.putExtra("dep", department);
@@ -48,16 +44,12 @@ public class createclubpage extends AppCompatActivity {
         intent.putExtra("clubdes", clubdescription);
         intent.putExtra("namesurname", namesurnameText);
         intent.putExtra("password", password);
-
         startActivity(intent);
-    }
-
-    public void addphoto1Clicked(View view){
-
+        finish();
     }
 
     public void backClicked(View view){
-        Intent intent = new Intent(createclubpage.this, studentprofilepage.class);
+        Intent intent = new Intent(settingspage.this,studentfeedpage.class);
         intent.putExtra("name", name);
         intent.putExtra("surname", surname);
         intent.putExtra("dep", department);
